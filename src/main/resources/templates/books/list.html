@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title> Spring Guru page</title>
+</head>
+<body>
+<h1> Book list</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Isbn</th>
+        <th>Author</th>
+        <th>Publisher</th>
+    </tr>
+
+    <tr th:each="book : ${books}">
+        <td th:text="${book.id}">id</td>
+        <td th:text="${book.title}">Title</td>
+        <td th:text="${book.isbn}">Isbn</td>
+        <td th:text="${book.author}">Author</td>
+        <td th:text="${book.publisher.name}">Publisher</td>
+    </tr>
+</table>
+
+
+
+<h1> Author list</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Author</th>
+    </tr>
+
+    <tr th:each="author : ${author}">
+        <td th:text="${author.id}">id</td>
+        <td th:text="${author.firstname}">firstname</td>
+        <td th:text="${author.lastname}">lastname</td>
+
+    </tr>
+</table>
+
+</body>
+</html>
